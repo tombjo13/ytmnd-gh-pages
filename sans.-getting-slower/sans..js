@@ -10,7 +10,7 @@ var percent_time = 0.57686;
 sansrot = 0
 sansmod = Math.round(Math.random() * 4)
 
-var rate = 1;
+var rate = 2;
 var rate_timer = percent_time;
 
 function update() {
@@ -22,11 +22,14 @@ function update() {
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
 
-	rate_timer -= rate * 25 / delta;
+	rate_timer -= rate * 25 / (delta / (rate));
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
-		rate -= 0.0001;
+		rate -= (0.001 * rate);
+		if (rate <= 0.0001) {
+			rate = 0.0001
+		}		
 		sans.rate(rate);
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(2) + "%";
 	}
