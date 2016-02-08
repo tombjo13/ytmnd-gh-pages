@@ -10,6 +10,9 @@ var percent_time = 0.57686;
 var rate = 1;
 var rate_timer = percent_time;
 
+var temw = 0
+var temh = 0
+
 function update() {
 
 	var divwidth = document.getElementById('tembling_temmie').offsetWidth;
@@ -28,10 +31,12 @@ function update() {
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
 
-	document.getElementById("tem").style.top = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divheight-500)/2) + "px";
-	document.getElementById("tem").style.left = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divwidth-500)/2) + "px";
+	document.getElementById("tem").style.top = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divheight-500)/2)+temh + "px";
+	document.getElementById("tem").style.left = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 2), -48), 48)+(divwidth-500)/2)+temw + "px";
 	document.getElementById("temback").style.top = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 1.5), -48), 48)+(divheight-500)/2) + "px";
 	document.getElementById("temback").style.left = (rate - Math.min(Math.max(parseInt(Math.random() * rate * 1.5), -48), 48)+(divwidth-500)/2) + "px";
+	temh = temh + (((Math.random() * 4 ) -1.5) / (35 / rate)) 
+	temw = temw + (((Math.random() * 4 ) -1.5) / (12 / rate)) 
 	requestAnimationFrame(update);
 }
 
