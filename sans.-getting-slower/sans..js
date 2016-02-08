@@ -10,7 +10,7 @@ var percent_time = 0.57686;
 sansrot = 0
 sansmod = Math.round(Math.random() * 4)
 
-var rate = 2;
+var rate = 1;
 var rate_timer = percent_time;
 
 function update() {
@@ -26,7 +26,7 @@ function update() {
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
-		rate -= (0.001 * rate);
+		rate -= (0.0001 * rate);
 		if (rate <= 0.0001) {
 			rate = 0.0001
 		}		
