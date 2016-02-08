@@ -7,12 +7,12 @@ var update_time = new Date();
 
 var percent_time = 0.57686;
 
+bottomcount = 0
 sansrot = 0
 sansmod = Math.round(Math.random() * 4)
 
 var rate = 1;
 var rate_timer = percent_time;
-
 function update() {
 
 	var divwidth = document.getElementById('rumbling_sans').offsetWidth;
@@ -38,7 +38,42 @@ function update() {
 	document.getElementById("sans").style.top = ((rate - Math.random() * rate * 2)+((divheight-500)/2)) + "px";
 	document.getElementById("sans").style.left = ((rate - Math.random() * rate * 2)+((divwidth-500)/2)) + "px";
 	sansrot = sansrot + ((Math.round(Math.random()) * 4 - sansmod) * rate)
+	if (rate <= 0.9 && rate > 0.85) {
+		document.title = "Sans... What are you doing?"
+	}
+	if (rate <= 0.85 && rate > 0.8) {
+		document.title = "Stop it Sans."
+	}
+	if (rate <= 0.8 && rate > 0.75) {
+		document.title = "Sans!"
+	}
+	if (rate <= 0.75 && rate > 0.7) {
+		document.title = "Quit it out!"
+	}
+	if (rate <= 0.7 && rate > 0.65) {
+		document.title = "If you don't stop this instant I'm calling Toriel!"
+	}
+	if (rate <= 0.65 && rate > 0.6) {
+		document.title = "Sans?"
+	}
+	if (rate <= 0.6 && rate > 0.55) {
+		document.title = "Are you okay Sans?"
+	}
+	if (rate <= 0.55 && rate > 0.5) {
+		document.title = "I'm going to go get help."
+	}
+	if (rate <= 0.50) {
+		document.title = "SANS. EXCEPT IT KEEPS GETTING SLOWER?"
+	}
+	if (rate == 0.0001) {
+		document.title = '\uD83D\uDCA7\u264B\u25A0\u2B27\u270D'
+		bottomcount++
+		if (bottomcount => 100) {
+			window.location.replace("about:blank");
+		}	
+	}
 	requestAnimationFrame(update);
+	
 }
 
 function run() {
