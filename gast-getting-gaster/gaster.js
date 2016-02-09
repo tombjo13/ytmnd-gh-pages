@@ -37,6 +37,16 @@ function update() {
 		document.getElementById("mystery").style.top = ((rate - Math.random() * rate * 2)+((divheight-500)/2)) + "px";
 		document.getElementById("mystery").style.left = ((rate - Math.random() * rate * 2)+((divwidth-500)/2)) + "px";
 	}
+
+	if (rate >= 6.66) {
+		document.getElementById("mystery").style.visibility = "hidden";
+		document.getElementById("mystery2").style.visibility = "visible";
+		document.getElementById("mystery2").style.top = ((rate - Math.random() * rate * 2)+((divheight-500)/2)) + "px";
+		document.getElementById("mystery2").style.left = ((rate - Math.random() * rate * 2)+((divwidth-500)/2)) + "px";
+		var newOpacity = 1-(rate-6.66)/660;
+		if(newOpacity < 0)newOpacity = 0;
+		document.getElementById("mystery2").style.opacity = newOpacity+"";
+	    }
 	requestAnimationFrame(update);
 }
 
