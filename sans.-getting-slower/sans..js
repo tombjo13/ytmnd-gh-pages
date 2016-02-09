@@ -22,7 +22,7 @@ function update() {
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
 
-	rate_timer -= rate * 25 / (delta / (rate));
+	rate_timer -= rate * 25 / (delta / (rate * 5));
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
@@ -69,7 +69,7 @@ function update() {
 		document.title = '\uD83D\uDCA7\u264B\u25A0\u2B27\u270D'
 		bottomcount++
 		if (bottomcount => 100) {
-			window.location.replace("about:blank");
+			window.location.replace("https://walle303.github.io/ytmnd/gast-getting-gaster/");
 		}	
 	}
 	requestAnimationFrame(update);
