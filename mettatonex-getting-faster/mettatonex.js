@@ -1,11 +1,11 @@
 var mettatonex = new Howl({
-	src: ["audio/deathbyglamor.ogg"],
+	src: ["audio/deathbyglamor.ogg", "audio/deathbyglamor.mp3"],
 	loop: true,
 });
 
 var update_time = new Date();
 
-var percent_time = 0.57686;
+var percent_time = 1.32979;
 
 var rate = 1;
 var rate_timer = percent_time;
