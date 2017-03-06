@@ -1,5 +1,5 @@
 var bonetrousle = new Howl({
-	src: ["audio/test.mp3"],
+	src: ["audio/Test.mp3"],
 	loop: true,
 });
 
