@@ -23,7 +23,7 @@ function update() {
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
-		rate += 0.005;
+		rate += 1.005;
 		muffet.rate(rate);
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
