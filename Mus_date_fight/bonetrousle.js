@@ -16,7 +16,7 @@ function update() {
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
 
-	rate_timer -= rate * delta / 1000;
+	rate_timer -= rate * delta / 1300;
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
