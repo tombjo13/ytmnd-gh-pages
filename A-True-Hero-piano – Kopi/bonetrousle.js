@@ -16,11 +16,11 @@ function update() {
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
 
-	rate_timer -= rate * delta / 30;
+	rate_timer -= rate * delta / 3;
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
-		rate += 0.005;
+		rate += 0.0025;
 		bonetrousle.rate(rate);
 		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
 	}
