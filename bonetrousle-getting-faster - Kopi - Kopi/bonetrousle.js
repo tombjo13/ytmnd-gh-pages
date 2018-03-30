@@ -21,7 +21,7 @@ function update() {
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
 		rate += 0.00015625;		bonetrousle.rate(rate);
-		document.getElementById("speed").innerHTML = "speed: " + (rate * 100).toFixed(0) + "%";
+		document.getElementById("speed").innerHTML = "speed: " + (rate * 50).toFixed(0) + "%";
 	}
 
 	document.getElementById("papyrus").style.top = (rate - Math.random() * rate * 2) + "px";
