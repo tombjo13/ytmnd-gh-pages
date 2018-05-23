@@ -5,7 +5,7 @@ var muffet = new Howl({
 
 var update_time = new Date();
 
-var percent_time = 0.525;
+var percent_time = 0.56442;
 
 var rate = 1;
 var rate_timer = percent_time;
@@ -19,7 +19,7 @@ function update() {
 	var delta = new_time.getTime() - update_time.getTime();
 	update_time.setTime(new_time.getTime());
 
-	rate_timer -= rate * delta / 1897;
+	rate_timer -= rate * delta / 1000;
 
 	if (rate_timer <= 0) {
 		rate_timer += percent_time;
@@ -29,7 +29,7 @@ function update() {
 	}
 
 	document.getElementById("muffet").style.top = ((rate - Math.random() * rate * 2)+((divheight-500)/2)) + "px";
-	document.getElementById("muffet").style.left = ((rate - Math.random() * rate * 2)+((divwidth-950)/2)) + "px";
+	document.getElementById("muffet").style.left = ((rate - Math.random() * rate * 2)+((divwidth-650)/2)) + "px";
 	requestAnimationFrame(update);
 }
 
